@@ -1,0 +1,29 @@
+/* dia_chi_gioi_nho_tin_tuc.css */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cafe-group, .social-group, .news-group {
+    margin-bottom: 20px;
+}
+
+.cafe, .social {
+    display: inline-block;
+    width: 30%;
+    margin: 1.5%;
+    background: #e9ecef;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.cafe img, .social img {
+    max-width: 100%;
+    border-radius: 5px;
+}

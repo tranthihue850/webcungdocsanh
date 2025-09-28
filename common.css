@@ -1,0 +1,47 @@
+/* common.css */
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #003366; /* Màu xanh đậm (xanh tím than) */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 70px; /* Tăng kích thước logo lên */
+    margin-right: 10px;
+    border: 2px solid #fff; /* Thêm viền trắng */
+    border-radius: 5px; /* Bo góc cho viền */
+    padding: 5px; /* Thêm khoảng cách giữa viền và ảnh */
+    background-color: #003366; /* Nền cho viền */
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #003366; /* Màu xanh đậm (xanh tím than) */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
