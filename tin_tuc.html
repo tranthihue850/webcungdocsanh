@@ -6,6 +6,25 @@
     <title>Tin Tức - Cùng Đọc Sách</title>
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="tin_tuc.css">
+    <style>
+        .news-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            background-color: #f9f9f9;
+            padding: 10px 0;
+        }
+        .news-item {
+            display: inline-block;
+            padding: 0 50px;
+            font-size: 18px;
+            animation: move 15s linear infinite;
+        }
+        @keyframes move {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,18 +40,35 @@
 
     <div class="container">
         <h2>Tin Tức</h2>
-        <div class="news-group">
-            <h3>Lễ Hội Sách</h3>
-            <p>Thông tin về lễ hội sách sắp diễn ra.</p>
-        </div>
-        <div class="news-group">
-            <h3>Triển Lãm Sách</h3>
-            <p>Thông tin về triển lãm sách sắp diễn ra.</p>
+        <div class="news-container" id="newsContainer">
+            <!-- Tin tức sẽ được thêm vào đây -->
         </div>
     </div>
 
     <footer>
         <p>Giới thiệu về tác giả: Trọng Đạt - 9A1, Trọng Thành - 9A7</p>
     </footer>
+
+    <script>
+        function loadNews() {
+            fetch('get_news.php')  // Đường dẫn đến file PHP lấy dữ liệu
+                .then(response => response.json())
+                .then(data => {
+                    const newsContainer = document.getElementById('newsContainer');
+                    newsContainer.innerHTML = ''; // Xóa nội dung cũ
+
+                    data.forEach(news => {
+                        const newsItem = document.createElement('div');
+                        newsItem.classList.add('news-item');
+                        newsItem.innerHTML = `<strong>${news.title}</strong>: ${news.content}`;
+                        newsContainer.appendChild(newsItem);
+                    });
+                })
+                .catch(error => console.error('Lỗi:', error));
+        }
+
+        // Tải tin tức khi trang được tải
+        window.onload = loadNews;
+    </script>
 </body>
 </html>
