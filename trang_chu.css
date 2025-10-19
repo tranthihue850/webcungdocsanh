@@ -1,6 +1,6 @@
   /* home.css */
 .container {
-    max-width: 1300px;
+    max-width: 1500px;
     margin: 20px auto;
     padding: 20px;
     background: white;
@@ -11,10 +11,20 @@
 .book-group, .cafe-group, .news-group {
     margin-bottom: 20px;
 }
-
-.book, .cafe, .social {
+.book {
     display: inline-block;
-    width: 30%;
+    width: 100%;
+    margin: 4.5%;
+    background: #e9ecef;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    gap:100px;
+}
+ .cafe, .social {
+    display: inline-block;
+    width: 100%;
     margin: 1.5%;
     background: #e9ecef;
     border-radius: 5px;
@@ -44,7 +54,7 @@ button {
           border-width: 10px;
           margin-left: 20px;
           margin-right: 20px;
-
+          
         }
     
         .gojo{
@@ -53,3 +63,20 @@ button {
           .chinhchu{
           display: flex;
           justify-content: space-between;}
+footer {
+    width:100% ;box-sizing: border-box;
+}
+.chinhchu2 {
+  display: flex;
+  justify-content: center; /* căn giữa toàn bộ dãy */
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 40px; /* khoảng cách giữa các sách */
+}
+.book img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
