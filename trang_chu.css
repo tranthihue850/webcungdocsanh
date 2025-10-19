@@ -1,6 +1,6 @@
-/* home.css */
+  /* home.css */
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 20px auto;
     padding: 20px;
     background: white;
@@ -29,7 +29,7 @@
 }
 
 button {
-    margin-top: 10px;
+    margin-top: -1px;
     padding: 10px;
     background: #007BFF;
     color: white;
@@ -37,3 +37,19 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+.yuta{
+          width: 25%;
+          border: #fff;
+          border-style: solid;
+          border-width: 10px;
+          margin-left: 20px;
+          margin-right: 20px;
+
+        }
+    
+        .gojo{
+          width: 50%;
+          text-align:center;    }
+          .chinhchu{
+          display: flex;
+          justify-content: space-between;}
