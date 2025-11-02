@@ -1,18 +1,29 @@
 <?php
-include 'connect.php';
+$serverName = "localhost"; // Địa chỉ máy chủ
+$username = "root"; // Tên người dùng
+$password = ""; 
+$database = "your_database_name"; // Tên cơ sở dữ liệu
 
-$sql = "SELECT * FROM sach";
-$stmt = sqlsrv_query($conn, $sql);
+// Kết nối đến MySQL
+$conn = new mysqli($serverName, $username, $password, $database);
 
-$books = array();
-if ($stmt) {
-    while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-        $books[] = $row;
-    }
+// Kiểm tra kết nối
+if ($conn->connect_error) {
+    die("Kết nối thất bại: " . $conn->connect_error);
 }
 
-sqlsrv_free_stmt($stmt);
-sqlsrv_close($conn);
+$sql = "SELECT * FROM tin_tuc"; // Thay 'news' bằng tên bảng của bạn
+$result = $conn->query($sql);
 
-echo json_encode($books);
+$news = array();
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $news[] = $row;
+    }
+} else {
+    echo "0 kết quả";
+}
+
+$conn->close();
+echo json_encode($news);
 ?>

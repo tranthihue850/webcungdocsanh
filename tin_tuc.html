@@ -51,12 +51,11 @@
 
     <script>
         function loadNews() {
-            fetch('get_news.php')  // Đường dẫn đến file PHP lấy dữ liệu
+            fetch('get_news.php')
                 .then(response => response.json())
                 .then(data => {
                     const newsContainer = document.getElementById('newsContainer');
-                    newsContainer.innerHTML = ''; // Xóa nội dung cũ
-
+                    newsContainer.innerHTML = '';
                     data.forEach(news => {
                         const newsItem = document.createElement('div');
                         newsItem.classList.add('news-item');
@@ -67,7 +66,6 @@
                 .catch(error => console.error('Lỗi:', error));
         }
 
-        // Tải tin tức khi trang được tải
         window.onload = loadNews;
     </script>
 </body>
